@@ -14,7 +14,7 @@ let package = Package(
         .library(name: "PapyrusCore", targets: ["PapyrusCore"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-syntax.git", branch: "main"),
+        .package(url: "https://github.com/apple/swift-syntax.git", from: "509.0.0-swift-5.9-DEVELOPMENT-SNAPSHOT-2023-04-25-b"),
         .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.7.1")),
     ],
     targets: [
