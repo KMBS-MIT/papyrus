@@ -48,7 +48,12 @@ let package = Package(
                 .product(name: "SwiftParserDiagnostics", package: "swift-syntax"),
                 .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
             ],
-            path: "PapyrusPlugin/Sources"
+            path: "PapyrusPlugin/Sources",
+            linkerSettings: [
+              .unsafeFlags([ // workaround for Xcode 15 Beta 3 bug
+                "-fprofile-instr-generate",
+              ])
+            ]
         ),
         .testTarget(
             name: "PapyrusCoreTests",
